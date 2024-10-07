@@ -71,6 +71,29 @@ The **Satellite Imagery Multi-vehicles Dataset (SIMD)** is used for training and
 ## Evaluation
 - The trained models are evaluated based on detection accuracy, precision, recall, and other metrics to determine the most efficient configuration for satellite image vehicle detection.
 - Comparison metrics are stored and analyzed in the `run/train/` directory.
+- part 1: (first model)
+  ![image](https://github.com/user-attachments/assets/1354769c-63a3-4994-962b-3fb60ee5612b)
+
+  Run the detect.py file:
+  ```bash
+   !python detect.py --weights 
+   /content/drive/MyDrive/yolov7/runs/train/exp53/weights/best.pt --source 
+   /content/drive/MyDrive/yolov7/sat-1/test/images
+   ```
+  ![image](https://github.com/user-attachments/assets/3127a9a6-40bd-42bf-bfa2-0bee1983f286)
+
+  Run the test.py file:
+  ```bash
+   !python test.py --data /content/drive/MyDrive/yolov7/sat-1/data.yaml -
+   batch 16 --conf 0.001 --iou 0.65 --img 640 --device 0 --weights 
+   /content/drive/MyDrive/yolov7/runs/train/exp53/weights/best.pt 
+   ```
+  ![image](https://github.com/user-attachments/assets/97dc9f86-bf99-4d52-bf44-49cf95feb52b)
+
+  an example:
+  ![image](https://github.com/user-attachments/assets/0fb7d1b5-9eb9-4bba-9b2d-94ef141db6b8)
+
+
 
 ## links
 - **YOLOv7**: https://github.com/WongKinYiu/yolov7
